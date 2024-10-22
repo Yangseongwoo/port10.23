@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index2.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/index2.js"></script>
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="scroll-text" onmousemove="showImage(event)" onmouseleave="hideImage()">
+                SEEING ESSENCE IN SIMPLICITY ● 
+                SEEING ESSENCE IN SIMPLICITY
+            </div>
+            <div class="image-container">
+                <img src="./image/ui_ux.jpg" class="hover-image" style="display: none;">
+                <img src="./image/website1.jpg" class="hover-image" style="display: none;">
+                <img src="./image/website2.png" class="hover-image" style="display: none;">
+                <!-- 추가 이미지 -->
+            </div>
+        </div>
+        </div>
+
+        <div class="navbar">
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#select-project" class="nav-item">Select project</a>
+            <a href="#archives" class="nav-item">Archives</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#coming-soon" class="nav-item">Coming soon</a>
+            <div class="nav-item2" id="toggle-nav">Menu +</div> <!-- 추가된 부분 -->
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#select-project" class="nav-item">Select project</a>
+            <a href="#archives" class="nav-item">Archives</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#coming-soon" class="nav-item">Coming soon</a>
+        </div>
+        
+
+        
+        
+    
+        <div class="eyecontianer">
+            <div class="eyewrap"></div>
+        </div>
+    
+        <div class="eyeBallcon">
+            <div class="eyeBall">
+              <div class="iris"></div>
+            </div>
+          </div>
+
+
+      <!-- 대표 작품 섹션 -->
+
+      <div data-aos="fade-up" class="mockupcontainer">
+        <h2>FIND <br> PERSONAL <br> APP</h2>
+        <div class="mockup">
+            <img src="./image/ui_ux.jpg" alt="" onclick="window.location.href='uiux.html'" onmouseover="bestshowDescription()" onmouseout="besthideDescription()">
+            <div class="mockup_text">
+                <h1>McDonald's - ui/ux</h1>
+                <p>2024</p>
+                <button>SEE MORE</button>
+            </div>
+            <div class="description" style="display: none;">
+                <p>개인화에 초점을 두고 리디자인한 맥도날드의 UI/UX</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <!-- project 섹션 -->
+
+
+
+    <div class="section1_title" id="select-project"></div>
+<!--     <section id="horizontal"> -->
+        <h2 class="project_title">Projects</h2>
+        <div class="project_container" id="horizontal">
+            <div class="horizontal__item">
+                <div class="project_card">
+                    <img src="./image/website1.jpg" onclick="window.location.href='giant.html'" alt="Project 1" onmouseover="projectShowDescription(this)" onmouseout="projectHideDescription(this)">
+                    <div class="project_info">
+                        <h2>Giant- website</h2>
+                        <p>2024</p>
+                        <button class="infobtn">Info</button>
+                    </div>
+                    <div class="project_description" style="display: none;">
+                        <p>This is a brief description of Project 1.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="horizontal__item">
+                <div class="project_card">
+                    <img src="./image/website2.png" onclick="window.location.href='osteria.html'" alt="Project 2" onmouseover="showDescription(this)" onmouseout="hideDescription(this)">
+                    <div class="project_info">
+                        <h2>Giant- website</h2>
+                        <p>2024</p>
+                        <button>Info</button>
+                    </div>
+                    <div class="project_description" style="display: none;">
+                        <p>This is a brief description of Project 2.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="horizontal__item">
+                <div class="project_card">
+                    <img src="./image/website1.jpg" onclick="window.location.href='ohui.html'" alt="Project 3" onmouseover="projectshowDescription(this)" onmouseout="projecthideDescription(this)">
+                    <div class="project_info">
+                        <h2>Giant- website</h2>
+                        <p>2024</p>
+                        <button>Info</button>
+                    </div>
+                    <div class="project_description" style="display: none;">
+                        <p>This is a brief description of Project 3.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="horizontal__item">
+                <div class="project_card">
+                    <img src="./image/website1.jpg" alt="Project 4" onmouseover="showDescription(this)" onmouseout="hideDescription(this)">
+                    <div class="project_info">
+                        <h2>Giant- website</h2>
+                        <p>2024</p>
+                        <button>Info</button>
+                    </div>
+                    <div class="project_description" style="display: none;">
+                        <p>This is a brief description of Project 4.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<!--     </section> -->
+
+    
+    
+
+
+
+    <!-- archives 섹션 -->
+
+    <div id="archives" class="archives">
+        <div class="section2_title">Archives</div>
+        <div class="archives-header">
+            <h2 class="title">PROJECTS</h2>
+            <h2 class="category">SERVICES</h2>
+            <h2 class="date">YEARS</h2>
+        </div>
+        
+        <div class="underline"></div>
+        
+        <div class="archives-content" data-images='["image/ui_ux.jpg", "image/ui_ux.jpg"]'>
+            <div class="item1">Mcdonald’s app</div>
+            <div class="item2">WEB</div>
+            <div class="item3">2023</div>
+            <img class="project-image" src="image/ui_ux.jpg" alt="Mcdonald’s app" />
+        </div>
+        <div class="image-display hide"></div> <!-- 작품을 보여줄 공간 -->
+    
+        <div class="underline"></div>
+        
+        <div class="archives-content" data-images='["image/website1.jpg", "image/website1_2.jpg"]'>
+            <div class="item1">Giant web</div>
+            <div class="item2">WEB</div>
+            <div class="item3">2023</div>
+            <img class="project-image" src="image/website1.jpg" alt="Giant web" />
+        </div>
+        <div class="image-display hide"></div> <!-- 작품을 보여줄 공간 -->
+    
+        <div class="underline"></div>
+        
+        <div class="archives-content" data-images='["image/website2.png", "image/website2_2.png"]'>
+            <div class="item1">Osteria web</div>
+            <div class="item2">WEB</div>
+            <div class="item3">2023</div>
+            <img class="project-image" src="image/website2.png" alt="Osteria web" />
+        </div>
+        <div class="image-display hide"></div> <!-- 작품을 보여줄 공간 -->
+    
+        <div class="underline"></div>
+        
+        <div class="archives-content" data-images='["image/profileimg.jpg", "image/profileimg2.jpg"]'>
+            <div class="item1">Viynl app</div>
+            <div class="item2">APP DESIGN</div>
+            <div class="item3">2023</div>
+            <img class="project-image" src="image/profileimg.jpg" alt="Viynl app" />
+        </div>
+        <div class="image-display hide"></div> <!-- 작품을 보여줄 공간 -->
+    
+        <div class="underline"></div>
+    
+        <img id="cursor-image" src="image/cursor img.jpg" alt="Cursor Image" style="display: none; position: absolute; width: 40px; height: auto; pointer-events: none;">
+    </div>
+    
+
+    
+    <!-- about 섹션 -->
+    <div id="about" class="about_container">
+        <h2 class="abouttitle">Hi I'm <br> YANG SEONG <br> WOO</h2>
+        <img class="profileimg" src="image/profileimg.jpg" alt="">
+    </div>
+
+
+
+    <!-- overlay 섹션 -->
+    <div class="overlay-container">
+        <div class="overlay_info">
+            <button class="overlay_title">AVAILABLE FOR WORK</button>
+        </div>
+    
+        <div class="underline2"></div>
+    
+        <div class="service-section">
+            <h2 class="service-title">WHAT CAN I DO</h2>
+            <p class="service-description">Lorem Ipsum has been the industry's standard <br> dummy text ever since the 1500s, when an nknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+    
+        <div class="underline2"></div>
+    
+        <div class="service-section">
+            <h2 class="service-title">PROFESIONALLY</h2>
+            <p class="service-description">Lorem Ipsum has been the industry's standard <br> dummy text ever since the 1500s, when an nknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+    
+    
+        <div class="service-section">
+            <h2 class="service-title">PERSONALLY</h2>
+            <p class="service-description">Lorem Ipsum has been the industry's standard <br> dummy text ever since the 1500s, when an nknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+
+        <div class="service-section">
+            <h2 class="service-title">MY JOURNEY</h2>
+            
+            <div class="education-info">
+                <p class="education-title">Communication School Education</p>
+                <p class="education-date">2020 - 2023</p>
+            </div>
+            
+        </div>
+        <div class="underline3"></div>
+        
+        <div class="education-info">
+            <p class="education-title">Communication School Education</p>
+            <p class="education-date">2020 - 2023</p>
+        </div>
+        <div class="underline3"></div>
+
+        <div class="education-info">
+            <p class="education-title">Communication School Education</p>
+            <p class="education-date">2020 - 2023</p>
+        </div>
+        <div class="underline3"></div>
+
+        <div class="education-info">
+            <p class="education-title">Communication School Education</p>
+            <p class="education-date">2020 - 2023</p>
+        </div>
+        <div class="underline3"></div>
+        
+    </div>
+    
+
+    <!-- footer html -->
+    <div class="footer_container">
+        <div class="profile-section">
+            <img src="image/profileimg.jpg" alt="Profile Image" class="profile-image">
+            <div class="text_section">
+                <h2>LETS <br> CONNECT</h2>
+
+                <div class="social-links">
+                    <p>INSTAGRAM</p>
+                    <p>YOUTUBE</p>
+                </div>
+
+                
+            </div>
+
+            <div class="connectbtn">
+                 <button><img src="image/connecteye.png" alt=""> GET IN TOUCH</button>
+                </div>
+
+        </div>
+    
+        <div class="footer">
+            <p>© All rights reserved</p>
+            <div class="footer-right">
+                <p>Developed by sw</p>
+                <p id="current-time"></p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+    <script src="js/index.js"></script>
+    <script src="js/archive.js"></script>
+    <script src="js/scrolltext.js"></script>
+    <script src="js/bestproject.js"></script>
+    <script src="js/project.js"></script>
+    <script src="js/nav.js"></script>
+
+    <!-- 부드러운 스크롤 플러그인 -->
+    <script>
+        // Initialize Lenis
+    const lenis = new Lenis();
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', (e) => {
+      console.log(e);
+    });
+    
+    // Use requestAnimationFrame to continuously update the scroll
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+    
+    </script>
+
+<script>
+    // 현재 시간을 업데이트하는 함수
+    function updateTime() {
+        const now = moment().format('MMMM Do YYYY, h:mm:ss a');
+        document.getElementById('current-time').innerText = now;
+    }
+
+    // 처음 로드할 때 시간 업데이트
+    updateTime();
+
+    // 1초마다 시간 업데이트
+    setInterval(updateTime, 1000);
+</script>
+
+<script>
+    AOS.init();
+  </script>
+  
+</body>
+</html>
