@@ -80,7 +80,7 @@ body {
 }
 
 .nav-item {
-    width: 352px;
+    max-width: 352px;
     height: 32px;
     background-color: #EEEDED;
     color: #2A2928;
@@ -93,16 +93,12 @@ body {
     margin: 0 10px; /* 버튼 간격 */
     cursor: pointer;
     flex: 1 1 150px; /* 최소 너비 설정 */
-    max-width: 352px; /* 최대 너비 설정 */
     font-size: 16px;
     font-weight: 300;
     text-decoration: none; /* 링크의 기본 밑줄 제거 */
     transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
 }
 
-.nav-item2{
-    display: none;
-}
 
 .nav-item:hover {
     background-color: #2A2928; /* 버튼 색상 */
@@ -121,51 +117,32 @@ body {
 
 /* 반응형 디자인을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
+
     .navbar {
-        flex-direction: column; /* 세로 방향으로 변경 */
-        align-items: center;
+        max-width: 300px;
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* 버튼이 화면에 맞게 줄바꿈 되도록 설정 */
+        padding: 10px 0;
+        margin: 0 auto;
+        padding-bottom: 2%;
     }
 
-    .nav-links {
-        display: none; /* 기본적으로 숨김 */
+    .nav-item{
+        display: none;
+        padding-top: 2.2px;
     }
 
-    .nav-item {
-        display: none; /* 모든 nav-item 숨김 */
+    .nav-item:first-child{
+        margin: 0 10px; /* 버튼 간격 */
+        padding-top: 2.2px;
+        display: block;
     }
+    
 
-    .nav-item:first-child {
-        display: none; /* 첫 번째 nav-item만 보이도록 설정 */
-        width: 352px; /* 너비 설정 */
-        height: 32px; /* 높이 설정 */
-    }
-
-    #toggle-nav {
-        display: flex; /* + 버튼 보이도록 설정 */
-        width: auto; /* 기본 너비로 설정 */
-        justify-content: center; /* 중앙 정렬 */
-        margin-top: 10px; /* 간격 추가 */
-        cursor: pointer; /* 포인터 커서 */
-    }
-
-    #toggle-nav.active + .nav-links {
-        display: flex; /* active일 때 nav-links 보이기 */
-    }
-
-    .nav-item2{
-        width: 352px; /* 너비 설정 */
-        height: 32px; /* 높이 설정 */
-        background-color: #EEEDED;
-        color: #2A2928;
-        outline: solid 1px black;
-    }
 }
 
-@media (max-width: 480px) {
-    .nav-item {
-        height: 24px; /* 버튼 높이 더 축소 */
-    }
-}
 
 
 
@@ -375,6 +352,12 @@ body {
     margin-top: 20px; /* 카드 아래쪽에 여백 */
 }
 
+.mockup_text p{
+    font-size: 20px;
+    margin-left: -55%;
+    margin-top: 7px;
+}
+
 .mockup_text h1 {
     margin-right: 20px; /* 텍스트와 버튼 간의 여백 */
 }
@@ -392,20 +375,73 @@ body {
 .description {
     display: none; /* 기본적으로 숨김 */
     position: absolute; /* 상대 위치를 기준으로 절대 위치 설정 */
-    top: 50%; /* 이미지 상단에 위치 */
+    bottom: 9.5%; /* 이미지 상단에 위치 */
     left: 0; /* 왼쪽 정렬 */
     width: 100%; /* 전체 너비 사용 */
-    height: 285px;
+    height: 45px;
     padding: 10px; /* 패딩 */
-    background-color: rgba(255, 255, 255, 0.541); /* 반투명 배경 */
+    background-color: rgba(44, 44, 44, 0.541); /* 반투명 배경 */
     border-radius: 10px; /* 둥근 모서리 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
     transition: opacity 0.3s ease; /* 부드러운 애니메이션 효과 */
     z-index: 3; /* 이미지보다 위에 위치하도록 설정 */
     opacity: 0; /* 기본적으로 투명하게 설정 */
+    color: white;
 }
 
 /* 미디어 쿼리 */
+
+@media (max-width: 2768px) {
+    .mockupcontainer {
+        flex-direction: column; /* 세로 방향으로 배치 */
+        align-items: center; /* 중앙 정렬 */
+        padding-top: 10%; /* 상단 여백 조정 */
+    }
+
+    .mockupcontainer h2 {
+        font-size: 60px; /* 폰트 크기 조정 */
+        margin-left: 0; /* 왼쪽 여백 제거 */
+        position: relative; /* 절대 위치에서 상대 위치로 변경 */
+        top: 0; /* 위치 조정 */
+        left: 0; /* 위치 조정 */
+        text-align: center; /* 중앙 정렬 */
+    }
+
+    .mockup_text p{
+        font-size: 20px;
+        margin-left: 0;
+        margin-top: 0;
+        display: none;
+    }
+
+    .mockup {
+        transform: translate(0, 0); /* 이동 제거 */
+        margin-top: 20px; /* 카드 간의 세로 여백 */
+    }
+
+    .mockup img {
+        width: 100%; /* 이미지 너비를 100%로 설정 */
+        height: auto; /* 비율 유지 */
+    }
+
+    .mockup_text {
+        flex-direction: column; /* 세로 방향으로 배치 */
+        align-items: center; /* 중앙 정렬 */
+        margin-top: 10px; /* 카드 아래쪽에 여백 */
+    }
+
+    .mockup_text button {
+        width: 80%; /* 버튼 너비를 80%로 설정 */
+        margin-top: 10px; /* 버튼과 텍스트 간의 여백 */
+    }
+
+    .description {
+        height: auto; /* 높이 자동 조정 */
+        padding: 20px; /* 패딩 증가 */
+    }
+}
+
+
 @media (max-width: 768px) {
     .mockupcontainer {
         flex-direction: column; /* 세로 방향으로 배치 */
@@ -420,6 +456,13 @@ body {
         top: 0; /* 위치 조정 */
         left: 0; /* 위치 조정 */
         text-align: center; /* 중앙 정렬 */
+    }
+
+    .mockup_text p{
+        font-size: 20px;
+        margin-left: 0;
+        margin-top: 0;
+        display: none;
     }
 
     .mockup {
@@ -555,11 +598,13 @@ body {
 .project_description {
     display: none; /* 기본적으로 숨김 */
     position: absolute; /* 상대 위치를 기준으로 절대 위치 설정 */
-    bottom: -40px; /* 이미지 아래쪽에 위치 */
+    top: 0%; /* 이미지 아래쪽에 위치 */
     left: 0; /* 왼쪽 정렬 */
     width: 100%; /* 전체 너비 사용 */
+    height: 45px;
     padding: 10px; /* 패딩 */
-    background-color: rgba(255, 255, 255, 0.9); /* 반투명 배경 */
+    background-color: rgba(44, 44, 44, 0.541); /* 반투명 배경 */
+    color: white;
     border-radius: 10px; /* 둥근 모서리 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
     transition: bottom 0.3s ease, opacity 0.3s ease; /* 부드러운 애니메이션 효과 */
@@ -596,6 +641,21 @@ body {
         opacity: 1; /* 항상 보이도록 설정 (필요시 조정) */
         transition: none; /* 애니메이션 제거 (필요시 조정) */
     }
+
+    .project_info p{
+        margin-left: -13%; /* p 태그의 왼쪽 여백을 줄여 간격을 좁힘 */
+        margin-right: 0; /* 오른쪽 여백 제거 (필요시) */
+    }
+
+    .project_title{
+        width: 100%;
+        font-size: 50px;
+        font-family: "Merriweather", serif;
+        font-weight: 300;
+        padding-top: 2%;
+        padding-bottom: 5%;
+        color: #9b9997;
+    }
 }
 
 
@@ -608,10 +668,11 @@ body {
 }
 
 .section2_title {
-    font-size: 100px;
     font-family: "Merriweather", serif;
     font-weight: 300;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
+    font-size: 70px;
+    color: #9b9997;
 }
 
 .archives-header {
@@ -645,30 +706,30 @@ body {
 
 .title {
     width: 400px;
-    font-size: 15px;
-    color: #9b9997;
-    font-weight: 300;
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
 }
 
 .category {
     width: 100%;
     max-width: 1380px;
-    font-size: 15px;
-    color: #9b9997;
-    font-weight: 300;
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
 }
 
 .date {
     margin-left: auto; /* 오른쪽 끝으로 이동 */
-    font-size: 15px;
-    color: #9b9997;
-    font-weight: 300;
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
 }
 
 .item1 {
     width: 400px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .item2 {
@@ -859,44 +920,7 @@ body {
 }
 
 
-/* 미디어 쿼리 */
-@media (max-width: 768px) {
-    .overlay-container {
-        height: auto; /* 높이를 자동 조정 */
-        padding: 10px; /* 패딩 조정 */
-    }
 
-    .overlay_info {
-        padding: 10px 0; /* 상하 여백 조정 */
-    }
-
-    .service-section {
-        flex-direction: column; /* 세로 방향으로 정렬 */
-        align-items: flex-start; /* 왼쪽 정렬 */
-        padding: 5px 0; /* 상하 여백 조정 */
-    }
-
-    .service-title {
-        font-size: 20px; /* 제목 텍스트 크기 조정 */
-    }
-
-    .service-description {
-        font-size: 18px; /* 설명 텍스트 크기 조정 */
-        text-align: left; /* 왼쪽 정렬 */
-    }
-
-    .education-info {
-        align-items: flex-start; /* 왼쪽 정렬 */
-    }
-
-    .education-title {
-        font-size: 24px; /* 교육 제목 크기 조정 */
-    }
-
-    .education-date {
-        font-size: 12px; /* 날짜 텍스트 크기 조정 */
-    }
-}
 
 /* overlay 추가 섹션 */
 
@@ -910,15 +934,20 @@ body {
     padding-top: 5%;
 }
 
+.service-section2{
+    width: 100%;
+    max-width: 1850px;
+}
+
 .service-title {
     font-size: 24px; /* 제목 텍스트 크기 */
     color: #353535; /* 제목 색상 */
     margin: 0; /* 기본 여백 제거 */
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .service-description {
-    font-size: 30px; /* 설명 텍스트 크기 */
+    font-size: 25px; /* 설명 텍스트 크기 */
     color: #353535; /* 설명 색상 */
     max-width: 800px; /* 설명 최대 너비 설정 */
     text-align: right; /* 오른쪽 정렬 */
@@ -955,8 +984,48 @@ body {
     width: 100%; /* 전체 너비 설정 */
     max-width: 600px; /* 최대 너비 설정 */
     margin-left: auto; /* 왼쪽 여백 자동 설정 (오른쪽 정렬) */
+    
 }
 
+
+/* 미디어 쿼리 */
+@media (max-width: 768px) {
+    .overlay-container {
+        height: auto; /* 높이를 자동 조정 */
+        padding: 10px; /* 패딩 조정 */
+    }
+
+    .overlay_info {
+        padding: 10px 0; /* 상하 여백 조정 */
+    }
+
+    .service-section {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        align-items: flex-start; /* 왼쪽 정렬 */
+        padding: 5px 0; /* 상하 여백 조정 */
+    }
+
+    .service-title {
+        font-size: 20px; /* 제목 텍스트 크기 조정 */
+    }
+
+    .service-description {
+        font-size: 10px; /* 설명 텍스트 크기 조정 */
+        text-align: left; /* 왼쪽 정렬 */
+    }
+
+    .education-info {
+        align-items: flex-start; /* 왼쪽 정렬 */
+    }
+
+    .education-title {
+        font-size: 20px; /* 교육 제목 크기 조정 */
+    }
+
+    .education-date {
+        font-size: 12px; /* 날짜 텍스트 크기 조정 */
+    }
+}
 
 
 

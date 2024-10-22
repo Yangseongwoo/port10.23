@@ -1,16 +1,16 @@
-document.getElementById('toggle-nav').addEventListener('click', function() {
-    const navLinks = document.querySelector('.nav-links');
-    const toggleButton = this;
+document.addEventListener('DOMContentLoaded', function() {
+    const firstNavItem = document.querySelector('.nav-item:first-child');
+    const navItems = document.querySelectorAll('.nav-item:not(:first-child)');
 
-    navLinks.classList.toggle('active'); // nav-links의 active 클래스를 토글하여 보이기/숨기기
-
-    // 버튼 텍스트 변경
-    if (navLinks.classList.contains('active')) {
-        toggleButton.textContent = 'Menu -'; // 열렸을 때 텍스트 변경
-    } else {
-        toggleButton.textContent = 'Menu +'; // 닫혔을 때 텍스트 변경
-    }
+    firstNavItem.addEventListener('click', function() {
+        // 'nav-links'를 보이도록 토글
+        navItems.forEach(item => {
+            item.classList.toggle('active');
+            item.style.display = item.classList.contains('active') ? 'block' : 'none';
+        });
+    });
 });
+
 
 
 
@@ -28,4 +28,22 @@ document.querySelectorAll('.nav-item').forEach(item => {
         });
     });
 })
+
+
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault(); // 기본 클릭 동작 방지
+        const targetId = this.getAttribute('href'); // 클릭한 링크의 href 속성 값 가져오기
+        const targetElement = document.querySelector(targetId); // 타겟 요소 선택
+
+        if (targetElement) {
+            // 부드러운 스크롤 애니메이션
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth' // 부드럽게 스크롤
+            });
+        }
+    });
+});
+
 
