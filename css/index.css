@@ -391,7 +391,7 @@ body {
 
 /* 미디어 쿼리 */
 
-@media (max-width: 2768px) {
+@media (max-width: 1768px) {
     .mockupcontainer {
         flex-direction: column; /* 세로 방향으로 배치 */
         align-items: center; /* 중앙 정렬 */

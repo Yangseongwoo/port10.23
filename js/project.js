@@ -28,6 +28,7 @@ const mediaQuery = window.matchMedia("(max-width: 768px)");
 
 function handleScrollAnimation() {
     if (!mediaQuery.matches) { // 화면 크기가 768px 초과일 때만 작동
+        // 기존 애니메이션을 적용
         gsap.to(box_items, {
             xPercent: -50 * (box_items.length - 1),
             ease: "sine.out",
@@ -39,6 +40,10 @@ function handleScrollAnimation() {
                 end: "+=" + (section_2.offsetWidth * 0.8)
             }
         });
+
+        // 스타일 초기화
+        section_2.style.display = 'flex'; 
+        section_2.style.overflow = 'hidden'; 
     } else {
         // 작은 화면에서는 애니메이션 비활성화
         gsap.killTweensOf(box_items);
@@ -50,7 +55,7 @@ function handleScrollAnimation() {
 
         // 세로 방향으로 나열
         section_2.style.display = 'block'; // 블록 요소로 설정
-        section_2.style.overflow = 'visible'; // 세로 스크롤 비활성화
+        section_2.style.overflow = 'visible'; // 세로 스크롤 활성화
     }
 }
 
@@ -58,7 +63,13 @@ function handleScrollAnimation() {
 handleScrollAnimation();
 
 // 리사이즈 이벤트 리스너 추가
+window.addEventListener("resize", handleScrollAnimation);
+
+// 미디어 쿼리 변경 이벤트 리스너 추가
 mediaQuery.addEventListener("change", handleScrollAnimation);
+
+
+
 
 
 
