@@ -34,6 +34,7 @@ body{
 
 .back-button:hover {
     background-color: #353535; /* 호버 시 색상 변경 */
+    color: white;
 }
 
 .project-header {
@@ -46,6 +47,8 @@ body{
 .project-title {
     font-size: 70px; /* 프로젝트 제목 크기 */
     margin: 0; /* 기본 여백 제거 */
+    text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192), /* 그림자 */
+                 0 0 20px rgba(182, 182, 182, 0.6); /* 야광 효과 */
 }
 
 .project-info {
