@@ -544,6 +544,7 @@ html, body {
         top: 0; /* 위치 조정 */
         left: 0; /* 위치 조정 */
         text-align: center; /* 중앙 정렬 */
+        padding-top: 20%;
     }
 
     .mockup_text p{
