@@ -16,6 +16,8 @@
     
 </head>
 <body>
+    
+    <button id="scrollToTopBtn">TOP</button>
 
     <div class="container">
         <div class="header">
@@ -51,11 +53,22 @@
             <div class="eyewrap"></div>
         </div>
     
-        <div class="eyeBallcon">
+
+        <div class="eye-container3">
+            <div class="eye-container2">
+                <div class="eye-wrap2">
+                    <div class="eye-ball">
+                        <div class="iris2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--         <div class="eyeBallcon">
             <div class="eyeBall">
               <div class="iris"></div>
             </div>
-          </div>
+          </div> -->
 
 
       <!-- 대표 작품 섹션 -->
@@ -63,11 +76,11 @@
       <div data-aos="fade-up" class="mockupcontainer">
         <h2>FIND <br> PERSONAL <br> APP</h2>
         <div class="mockup">
-            <img src="./image/ui_ux.jpg" alt="" onclick="window.location.href='uiux.html'" onmouseover="bestshowDescription()" onmouseout="besthideDescription()">
+            <img src="image/ui_ux2.jpg" alt="" onmouseover="bestshowDescription()" onmouseout="besthideDescription()">
             <div class="mockup_text">
                 <h1>McDonald's - ui/ux</h1>
                 <p>2024</p>
-                <button>SEE MORE</button>
+                <button onclick="window.location.href='uiux.html'">SEE MORE</button>
             </div>
             <div class="description" style="display: none;">
                 <p>개인화에 초점을 두고 리디자인한 맥도날드의 UI/UX</p>
@@ -88,58 +101,70 @@
         <div class="project_container" id="horizontal">
             <div class="horizontal__item">
                 <div class="project_card">
-                    <img src="./image/website1.jpg" onclick="window.location.href='giant.html'" alt="Project 1" onmouseover="projectShowDescription(this)" onmouseout="projectHideDescription(this)">
-                    <div class="project_info">
-                        <h2>Giant- website</h2>
-                        <p>2024</p>
-                        <button class="infobtn">Info</button>
-                    </div>
+                    <img src="image/website1.jpg" alt="Project 1" onmouseover="projectShowDescription(this)" onmouseout="projectHideDescription(this)">
+
                     <div class="project_description" style="display: none;">
                         <p>This is a brief description of Project 1.</p>
                     </div>
                 </div>
+
+                <div class="project_info">
+                    <h2>Giant- website</h2>
+                    <p>2024</p>
+                    <button onclick="window.location.href='giant.html'" class="infobtn">Info</button>
+                </div>
+
             </div>
             
             <div class="horizontal__item">
                 <div class="project_card">
-                    <img src="./image/website2.png" onclick="window.location.href='osteria.html'" alt="Project 2" onmouseover="showDescription(this)" onmouseout="hideDescription(this)">
-                    <div class="project_info">
-                        <h2>Giant- website</h2>
-                        <p>2024</p>
-                        <button>Info</button>
-                    </div>
+                    <img src="./image/website2.png"  alt="Project 2" onmouseover="projectShowDescription(this)" onmouseout="projectHideDescription(this)">
+
                     <div class="project_description" style="display: none;">
                         <p>This is a brief description of Project 1.</p>
                     </div>
                 </div>
+
+                <div class="project_info">
+                    <h2>Giant- website</h2>
+                    <p>2024</p>
+                    <button onclick="window.location.href='osteria.html'">Info</button>
+                </div>
+
             </div>
             
             <div class="horizontal__item">
                 <div class="project_card">
-                    <img src="./image/website1.jpg" onclick="window.location.href='ohui.html'" alt="Project 3" onmouseover="projectshowDescription(this)" onmouseout="projecthideDescription(this)">
-                    <div class="project_info">
-                        <h2>Giant- website</h2>
-                        <p>2024</p>
-                        <button>Info</button>
-                    </div>
+                    <img src="./image/website1.jpg" alt="Project 3" onmouseover="projectShowDescription(this)" onmouseout="projectHideDescription(this)">
+
                     <div class="project_description" style="display: none;">
                         <p>This is a brief description of Project 3.</p>
                     </div>
                 </div>
+
+                <div class="project_info">
+                    <h2>Giant- website</h2>
+                    <p>2024</p>
+                    <button onclick="window.location.href='ohui.html'">Info</button>
+                </div>
+
             </div>
             
             <div class="horizontal__item">
                 <div class="project_card">
-                    <img src="./image/website1.jpg" alt="Project 4" onmouseover="showDescription(this)" onmouseout="hideDescription(this)">
-                    <div class="project_info">
-                        <h2>Giant- website</h2>
-                        <p>2024</p>
-                        <button>Info</button>
-                    </div>
+                    <img src="./image/website1.jpg" alt="Project 4" onmouseover="projectShowDescription(this)" onmouseout="projectHideDescription(this)">
+
                     <div class="project_description" style="display: none;">
                         <p>This is a brief description of Project 4.</p>
                     </div>
                 </div>
+
+                <div class="project_info">
+                    <h2>Giant- website</h2>
+                    <p>2024</p>
+                    <button>Info</button>
+                </div>
+
             </div>
         </div>
         
@@ -322,6 +347,7 @@
     <script src="js/bestproject.js"></script>
     <script src="js/project.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/scrolltop.js"></script>
 
     <!-- 부드러운 스크롤 플러그인 -->
     <script>
@@ -361,7 +387,15 @@
     AOS.init();
   </script>
   
+<script>
+     window.addEventListener('load', function() {
+            window.scrollTo(0, 0); // 페이지가 로드될 때 스크롤을 (0, 0) 위치로 이동
+        });
 
+/*         window.addEventListener('resize', function() {
+    location.reload(); // 화면 크기가 변경될 때 페이지 새로 고침
+}); */
+</script>
   
 </body>
 </html>
