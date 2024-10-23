@@ -9,15 +9,18 @@
     padding: 0;
 }
 
-html{
-    scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-body {
+
+
+html, body {
     background-color: #EEEDED;
     font-family: "San Francisco";
     margin: 0 auto;
     overflow-x: hidden;
+    scroll-behavior: smooth; 
 }
 
 .header {
@@ -26,6 +29,29 @@ body {
     overflow: hidden;
     background-color: #f0f0f000;
 }
+
+
+/* scroll-top */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #EEEDED;
+    color: rgb(0, 0, 0);
+    border: 0.5px solid black transparent; /* border 굵기를 0.5px로 설정 */
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 부드러운 전환 효과 추가 */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #000000;
+    color: white;
+}
+
 
 .scroll-text {
     width: 100%;
@@ -80,7 +106,7 @@ body {
 }
 
 .nav-item {
-    max-width: 352px;
+    max-width: 332px;
     height: 32px;
     background-color: #EEEDED;
     color: #2A2928;
@@ -88,7 +114,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: left;
-    padding: 0px 25px;
+    padding: 3px 0px 0px 20px;
     border-radius: 16px; /* 타원형 버튼을 위한 반지름 */
     margin: 0 10px; /* 버튼 간격 */
     cursor: pointer;
@@ -98,6 +124,8 @@ body {
     text-decoration: none; /* 링크의 기본 밑줄 제거 */
     transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
 }
+
+
 
 
 .nav-item:hover {
@@ -131,13 +159,12 @@ body {
 
     .nav-item{
         display: none;
-        padding-top: 2.2px;
     }
 
     .nav-item:first-child{
         margin: 0 10px; /* 버튼 간격 */
-        padding-top: 2.2px;
         display: block;
+        padding-top: 2px;
     }
     
 
@@ -145,6 +172,50 @@ body {
 
 
 
+
+.eye-container3 {
+    position: relative;
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+}
+
+.eye-container2 {
+    position: absolute; /* 절대 위치 설정 */
+    left: 50%; /* 중앙 정렬 */
+    top: 50%; /* 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 중앙 정렬을 위한 보정 */
+}
+
+.eye-wrap2 {
+    width: 200px; /* 눈의 크기 */
+    height: 100px; /* 눈의 크기 */
+    background-color: #ffffff; /* 눈 흰자 */
+    border-radius: 100%; /* 타원형 */
+    border: 2px solid #000; /* 테두리 */
+    position: relative;
+    overflow: hidden; /* 눈알이 밖으로 나가지 않도록 설정 */
+}
+
+.eye-ball {
+    position: absolute;
+    width: 80px; /* 눈알 크기 */
+    height: 80px; /* 눈알 크기 */
+    background-color: #000; /* 눈알 색상 */
+    border-radius: 50%; /* 둥글게 */
+    top: 10px; /* 위치 조정 */
+    left: 50%; /* 중앙 정렬 */
+    transform: translateX(-50%); /* 중앙 정렬을 위한 보정 */
+}
+
+.iris2 {
+    position: absolute;
+    width: 30px; /* 동공 크기 */
+    height: 30px; /* 동공 크기 */
+    background-color: #000; /* 동공 색상 */
+    border-radius: 50%; /* 둥글게 */
+    top: 25%; /* 위치 조정 */
+    left: 25%; /* 위치 조정 */
+}
 
 
 
@@ -165,7 +236,7 @@ body {
     margin: 0 auto; /* 자동 마진으로 중앙 정렬 */
 }
 
-/* 반응형 디자인을 위한 미디어 쿼리 (선택 사항) */
+
 @media (max-width: 1826px) {
     .eyewrap {
         width: 90%; /* 화면이 좁을 때 너비를 조정 */
@@ -180,6 +251,7 @@ body {
     justify-content: center; /* 수평 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
     margin-top: -170px; /* eyecontainer와 겹치도록 조정 */
+    overflow: hidden;
 }
 
 .iris {
@@ -193,6 +265,7 @@ body {
     border-radius: 50%;
     left: 110px;  
     top: 110px;
+    will-change: transform;
 }
 
 
@@ -370,7 +443,20 @@ body {
     border-radius: 100px; /* 둥근 모서리 */
     cursor: pointer; /* 포인터 커서 */
     outline: solid 1px black;
+    transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
 }
+
+.mockup_text button:hover {
+    padding: 10px 20px; /* 버튼 패딩 */
+    color: rgb(255, 255, 255); /* 버튼 글씨 색상 */
+    border: none; /* 기본 테두리 제거 */
+    border-radius: 100px; /* 둥근 모서리 */
+    cursor: pointer; /* 포인터 커서 */
+    outline: solid 1px black;
+    background-color: #000;
+    
+}
+
 
 .description {
     display: none; /* 기본적으로 숨김 */
@@ -380,7 +466,7 @@ body {
     width: 100%; /* 전체 너비 사용 */
     height: 45px;
     padding: 10px; /* 패딩 */
-    background-color: rgba(44, 44, 44, 0.541); /* 반투명 배경 */
+    background: linear-gradient(to bottom, rgba(44, 44, 44, 0.541), rgba(0, 0, 0, 0.7)); /* 위에서 아래로 그라데이션 추가 */
     border-radius: 10px; /* 둥근 모서리 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
     transition: opacity 0.3s ease; /* 부드러운 애니메이션 효과 */
@@ -388,6 +474,8 @@ body {
     opacity: 0; /* 기본적으로 투명하게 설정 */
     color: white;
 }
+
+
 
 /* 미디어 쿼리 */
 
@@ -502,7 +590,7 @@ body {
     display: flex; /* 가로 방향으로 나열 */
     justify-content: flex-start; /* 카드 간의 간격을 왼쪽 정렬 */
     flex-wrap: wrap; /* 줄바꿈 설정 */
-    width: 2400px; /* 최대 너비를 100%로 설정 */
+    width: 2800px; /* 최대 너비를 100%로 설정 */
     margin: 0 auto; /* 중앙 정렬 */
     overflow-x: auto; /* 가로 스크롤 가능하도록 설정 */
     padding-left: 35px;
@@ -535,6 +623,7 @@ body {
     margin-bottom: 20px; /* 카드 간의 세로 여백 */
     width: 546px; /* 카드 너비 고정 */
     position: relative; /* 상대 위치 설정 */
+    overflow: hidden;
 }
 
 
@@ -542,6 +631,12 @@ body {
     width: 100%; /* 이미지 너비를 카드 너비에 맞게 조정 */
     height: auto; /* 비율 유지 */
     border-style: none; /* 테두리 제거 */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
+}
+
+.project_card img:hover {
+    transform: scale(1.05); /* 이미지 확대 */
 }
 
 .project_info {
@@ -549,7 +644,8 @@ body {
     justify-content: space-between; /* 제목과 버튼 사이의 간격을 균등하게 설정 */
     align-items: center; /* 수직 중앙 정렬 */
     width: 100%; /* 너비를 100%로 설정 */
-    height: 70px; /* 고정 높이 */
+    max-width: 546px;
+    height: 20px; /* 고정 높이 */
 }
 
 .project_info h2 {
@@ -655,6 +751,17 @@ body {
         padding-top: 2%;
         padding-bottom: 5%;
         color: #9b9997;
+    }
+
+    .project_info {
+        display: flex; /* 내부 요소를 flexbox로 설정 */
+        justify-content: space-between; /* 제목과 버튼 사이의 간격을 균등하게 설정 */
+        align-items: center; /* 수직 중앙 정렬 */
+        width: 100%; /* 너비를 100%로 설정 */
+        max-width: 546px;
+        height: 20px; /* 고정 높이 */
+        padding-top: 7%;
+        padding-bottom: 10%;
     }
 }
 

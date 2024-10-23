@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -94,4 +94,4 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         },
     });
-});
+}); */

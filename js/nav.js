@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const firstNavItem = document.querySelector('.nav-item:first-child');
-    const navItems = document.querySelectorAll('.nav-item:not(:first-child)');
+    const navItems = document.querySelectorAll('.nav-item');
 
     // nav-items의 초기 상태를 설정하는 함수
     function updateNavItems() {
@@ -22,10 +22,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 첫 번째 nav-item 클릭 시 나머지 항목 보이기/숨기기
     firstNavItem.addEventListener('click', function() {
+        const isActive = firstNavItem.classList.toggle('active');
+
         navItems.forEach(item => {
-            item.classList.toggle('active');
-            item.style.display = item.classList.contains('active') ? 'block' : 'none';
+            if (isActive) {
+                item.style.display = 'block'; // 모든 항목 보이기
+            } else {
+                item.style.display = 'none'; // 다시 첫 번째 항목만 보이기
+            }
         });
+
+        // 첫 번째 항목만 다시 보이도록 설정
+        if (!isActive) {
+            navItems[0].style.display = 'block'; // 첫 번째 항목만 보이도록 설정
+        }
     });
 
     // 초기 상태 설정
@@ -37,21 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-/* 부드러운 스크롤 */
-document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', function(event) {
-        event.preventDefault(); // 기본 클릭 이벤트 방지
-
-        const targetId = this.getAttribute('href'); // href 속성에서 ID 가져오기
-        const targetElement = document.querySelector(targetId); // 해당 ID의 요소 선택
-
-        // 스크롤 애니메이션
-        targetElement.scrollIntoView({
-            behavior: 'smooth' // 부드러운 스크롤
-        });
-    });
-})
 
 
 document.querySelectorAll('.nav-item').forEach(item => {
